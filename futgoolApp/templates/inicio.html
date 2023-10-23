@@ -1,0 +1,27 @@
+{% extends './base.html' %}
+
+{% block body %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/inicio.css' %}">
+
+
+<div id="map"></div>
+    <script src="script.js"></script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxGznz6i42LrcNzPftdQXPt_i9H_2AfRU&callback=iniciarMapa">
+    </script>
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block script %}
+
+    <script src="{% static 'js/inicio.js' %}"></script>
+
+{% endblock %}
