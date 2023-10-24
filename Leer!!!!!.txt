@@ -1,0 +1,8 @@
+nombre: diego
+email: die.hernandezf@duocuc.cl
+pass: 123
+
+FALTA HACER
+
+- Guardar en la base de datos a los usuarios cuando se registren al igual que se guarde un partido
+en la base de datos cuando se cree.
