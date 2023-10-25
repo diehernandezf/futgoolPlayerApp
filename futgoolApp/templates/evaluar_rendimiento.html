@@ -1,0 +1,20 @@
+{% extends './base.html' %}
+
+{% block body %}
+
+<div class="text-center">
+    <h2>Evaluar Rendimiento de: <br> {{ usuario.nombre }}</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for="calificacion">Calificación (1-10):</label>
+        <input type="number" name="calificacion" min="1" max="10" step="0.1" required>
+        <br><br>
+        <button type="submit" class="btn btn-primary">Enviar Evaluación</button>
+    </form>
+
+    <h3>Promedio de Calificaciones: {{ promedio|floatformat:1 }}</h3>
+</div>
+
+
+{% endblock %}

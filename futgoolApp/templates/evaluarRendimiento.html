@@ -1,0 +1,45 @@
+{% extends './base.html' %}
+
+{% block body %}
+
+{% load static %}
+
+<div class="text-center d-flex justify-content-center">
+    <div class="table-responsive m-2">
+        <h2>Usuarios</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Acciones</th>
+                    <th>Calificación Promedio</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in usuarios %}
+                    <tr>
+                        <td>{{ usuario.nombre }}</td>
+                        <td>{{ usuario.email }}</td>
+                        <td>
+                            <a href="{% url 'evaluar_rendimiento' usuario.id %}" class="btn btn-primary">Evaluar rendimiento</a>
+                        </td>
+                        <td>{{ usuario.calcular_promedio|floatformat:1 }}</td> <!-- Aplicar floatformat aquí -->
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+
+{% block script %}
+
+<script src="{% static 'js/registro.js' %}"></script>
+
+{% endblock %}
